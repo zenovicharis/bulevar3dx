@@ -1,0 +1,21 @@
+footer{
+  margin-top: -1%;
+  // background-image: url('../img/Ordinacija/footer.jpg');
+  // background-position:cover;
+  // background-repeat: no-repeat;
+  background-color:#ddd;
+  padding:2% 0;
+  img {
+    height:150px;
+  }
+  .writings{
+    font-size:190%;
+    font-weight:300;
+  }
+}
+
+.footer-info{
+  background-color:#41403d;
+  color:#fff !important;
+  padding:2% 0;
+}
