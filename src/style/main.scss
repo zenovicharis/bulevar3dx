@@ -2,16 +2,30 @@
 @import "colors";
 @import "utils";
 @import "header";
+@import "banner";
 @import "about";
 @import "services";
+@import "rengen";
+@import "form";
 @import "gallery";
 @import "number";
 @import "footer";
+@import "modal-fixed";
+@import "slider";
+
+// responsive sections
+@import "mobile-header";
 
 * {
   font-family: 'Roboto', sans-serif;
 }
 
 .map{
+  border-top: 4px solid $main-orange;
   overflow:hidden;
+}
+
+.error{
+  font-size: 62%;
+  color: red;
 }

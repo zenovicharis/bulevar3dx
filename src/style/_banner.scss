@@ -1,0 +1,55 @@
+section#banner{
+  background-color:$main-orange;
+  color:#fff;
+  .banner-box{
+    @include breakpoint(xs) {
+      border:none;
+      width:100% !important;
+      max-width:100%;
+      padding-top:1em;
+      padding-bottom:1em;
+      flex:unset;
+      float:left;
+      font-size:60%;
+    }
+  }
+
+  .icon-section{
+    color: #fff;
+    text-align: center;
+    font-size: 4em !important;
+    @include breakpoint(sm) {
+      font-size: 3em !important;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 4em !important;
+    }
+  }
+  .middle{
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    @include breakpoint(xs) {
+      border:none;
+      border-top:1px solid #fff;
+      border-bottom:1px solid #fff;
+    }
+  }
+  h5{
+    text-align:center;
+  }
+  p{
+    margin-bottom:0;
+    text-align:center;
+  }
+
+  .banner-txt{
+    @include breakpoint(sm) {
+      font-size: 80% !important;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 100% !important;
+    }
+  }
+}

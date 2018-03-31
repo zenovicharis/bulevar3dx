@@ -1,9 +1,31 @@
+
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+  border-bottom:4px solid $main-orange;
+  display:none !important;
   box-shadow:2px 2px 2px #ddd;
-  padding:1% 0;
-  img {
-    width:100%;
+
+  @include breakpoint(sm) {
+    display:block !important;
   }
+
+    a#logo-container{
+      padding:0;
+      &:hover{
+        box-shadow: none;
+        border-radius: 0;
+      }
+      img{
+        width:85%;
+        display:block;
+        margin:auto;
+      }
+    }
   nav {
     ul {
       text-align:right !important;

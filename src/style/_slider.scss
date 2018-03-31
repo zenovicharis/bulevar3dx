@@ -1,0 +1,32 @@
+#desktop-slider{
+  margin-top:8em;
+  display:none;
+  @include breakpoint(sm){
+    display:block;
+  }
+  .carousel-inner{
+    height: 525px;
+    position:relative;
+  }
+  .captions{
+    position:absolute;
+    width:400px;
+    background-color:rgba(221,221,221, .6);
+    right: 2em;
+    top: 2em;
+    text-align: center;
+    border-right: 2px solid orange;
+    img{
+      width:100%;
+      margin:auto;
+    }
+  }
+}
+
+#phone-slider{
+  margin-top:5em;
+  display:block;
+  @include breakpoint(sm){
+    display:none;
+  }
+}

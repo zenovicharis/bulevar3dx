@@ -1,9 +1,51 @@
 .gallery{
   .bordered{
     box-sizing:border-box;
-    border-left:2px solid #fff;
+    // border-left:2px solid #fff;
   }
-  .gallery-wrapper{
-    box-shadow:2px 2px 7px #000;
+  .container{
+    box-shadow:0px 2px 4px #ddd;
+  }
+
+  .visual {
+    background-color:#ddd;
+    color:#fff;
+    text-align:right;
+    margin-bottom:1em;
+    text-shadow: 1px 0px 2px #000;
+    padding:2em;
+    border-radius:3px;
+    cursor:pointer;
+    transition:all .9s ease 0s;
+    &:hover{
+      background-color:$main-orange !important;
+      background-size: 30% !important;
+    }
+  }
+
+  #ordinacija{
+    background:url('../img/machine.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 28%;
+    background-color: #ddd;
+  }
+
+  #xray {
+    background:url('../img/lisaann.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 15%;
+    background-color: #ddd;
+    background-position-x: 7%;
+  }
+  
+  #sphere{
+    background:url('../img/sphere.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 15%;
+    background-color: #ddd;
+    background-position-x: 7%;
   }
 }

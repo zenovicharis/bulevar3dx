@@ -1,3 +1,41 @@
 section{
-  padding:1% 0;
+  &#banner{
+    padding:1%;
+  }
+  .container#about{
+    padding-top:2%;
+    padding-bottom:2%;
+    box-shadow:0 2px 6px #ddd;
+  }
+
+}
+
+.heading{
+  img{
+    width: 21%;
+    display: block;
+    margin: auto;
+    @include breakpoint(xs) {
+      width: 50%;
+    }
+  }
+}
+
+#desktop-slider{
+  margin-top:8em;
+  display:none;
+  @include breakpoint(sm){
+    display:block;
+  }
+  .carousel-inner{
+    height: 525px;
+  }
+}
+
+#phone-slider{
+  margin-top:5em;
+  display:block;
+  @include breakpoint(sm){
+    display:none;
+  }
 }

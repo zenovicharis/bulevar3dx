@@ -1,13 +1,69 @@
 .services {
   background-image: linear-gradient(to bottom, $main-orange, $main-orange  60%, white 40%);
   background-repeat: no-repeat;
-  padding:1% 0;
+  color:#fff;
+  padding:0;
+  padding-top:1%;
+  
+  .container{
+    @include breakpoint(xs){
+      padding:0px !important;
+      font-size:70%;
+    }
+  }
+  .first-service{
+    background:url('../img/Usluge/1.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
+  .second-service{
+    background:url('../img/Usluge/2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
+  .third-service{
+    background:url('../img/Usluge/3.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
+  .fourth-service{
+    background:url('../img/4.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
   .shadow-div {
     box-shadow:0px 0px 5px #ddd;
   
     .service {
       background-color:#fff;
-      
     }
+  }
+  .white{
+    color:#fff;
+    font-style:italic;
+  }
+  h4{
+    position:relative;
+    color:#000;
+    span{
+      border-bottom: 2px solid orange;
+    }
+    @include breakpoint(xs){
+      padding:0px !important;
+      font-size:150% !important;
+    }
+  }
+  p{
+    color:#000;
   } 
+  button{
+    &:hover{
+      color:#fff;
+      background-color:$main-orange;
+    }
+  }
 }
