@@ -1,0 +1,37 @@
+.social-block {
+  position: fixed;
+  @include breakpoint(sm){
+    top: 16%;
+  }
+  top: 25%;
+  left: 0;
+  background-color: rgba(221, 221, 221, .6);
+  font-size: 3em;
+  z-index: 99999;
+  .social {
+    display: block;
+    padding: .1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+  }
+  i{
+    cursor:pointer;
+    transition:all .4s ease 0s;
+    &#fb {
+      color:#fff;
+      background-color: #365899;
+      &:hover {
+        color: #365899;
+        background-color:#fff;
+      }
+    }
+    &#instagram {
+      background-color:#d6249f;
+      color: #fff;
+      &:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); // color:linear-gradient(to right, );
+      }
+    }
+  }
+}

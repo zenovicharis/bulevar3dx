@@ -1,4 +1,5 @@
 .mobile-header {
+  padding:1em 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,14 +15,14 @@
 
   .logo-container-mb{
     img{
-      width:7em;
+      width:5em;
     }
   }
   .menu-container{
     font-size:2em;
-    color:#ddd;
+    color:$gray;
     &:hover{
-      background-color:#ddd;
+      background-color:$gray;
       color:#fff;
       cursor:pointer;
     }

@@ -5,16 +5,24 @@ div.rengen{
     background-color:#e8e8e8;
     .block-custom{
       float:right;
-      border:8px solid #fff;
-      border-radius:5px;
       width:100%;
       overflow:hidden;
+      iframe{
+        border:8px solid #fff;
+        border-radius:5px;
+      }
     }
 
     .bulevar-front{
       padding: 3em 0;
       @include breakpoint(xs){
         padding-top: 35em;
+      }
+      h3{
+        text-decoration:underline;
+        span{
+          color:$main-orange !important;
+        }
       }
     }
   }

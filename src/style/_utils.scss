@@ -34,3 +34,26 @@
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }
+
+@mixin service($url){
+  background:url($url);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+@mixin gallery-sections($url, $width){
+  background:url($url);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: $width;
+  background-color: $gray;
+  padding-top:2em;
+  padding-bottom: 10em;
+  background-position: center bottom;
+}
+
+.twist{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

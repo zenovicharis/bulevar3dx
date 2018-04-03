@@ -4,48 +4,36 @@
     // border-left:2px solid #fff;
   }
   .container{
-    box-shadow:0px 2px 4px #ddd;
+    box-shadow:0px 2px 4px $gray;
   }
 
   .visual {
-    background-color:#ddd;
+    background-color:$gray;
     color:#fff;
-    text-align:right;
-    margin-bottom:1em;
+    text-align:center;
+    margin: 0 3%;
     text-shadow: 1px 0px 2px #000;
-    padding:2em;
     border-radius:3px;
     cursor:pointer;
     transition:all .9s ease 0s;
     &:hover{
       background-color:$main-orange !important;
-      background-size: 30% !important;
+      background-size: 70% !important;
     }
   }
 
   #ordinacija{
-    background:url('../img/machine.png');
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 28%;
-    background-color: #ddd;
+    @include gallery-sections('../img/xray.png', 60%);
+    @include breakpoint(lg){
+      background-position-y:2em;
+    }
   }
 
   #xray {
-    background:url('../img/lisaann.png');
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 15%;
-    background-color: #ddd;
-    background-position-x: 7%;
+    @include gallery-sections('../img/lisaann.png', 60%)
   }
   
   #sphere{
-    background:url('../img/sphere.png');
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 15%;
-    background-color: #ddd;
-    background-position-x: 7%;
+    @include gallery-sections('../img/sphere.png', 60%)
   }
 }

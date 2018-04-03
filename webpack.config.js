@@ -51,6 +51,10 @@ module.exports = {
         use: ['html-loader']
       },
       {
+        test: /\.pug$/,
+        use: ['pug-html-loader']
+      },
+      {
         test: /\.(jpg|png)$/,
         use: [{
           loader: 'file-loader',
@@ -72,13 +76,21 @@ module.exports = {
       {
         test: /\.gif$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.ico$/,
+        loader: 'url-loader',
+        query: { 
+          limit: 1,
+          name: '[name].[ext]',
+        },
       }
     ]
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 4201,
+    port: 4200,
     host: '0.0.0.0',
     hot: false,
     quiet: false

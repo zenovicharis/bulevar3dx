@@ -1,48 +1,50 @@
-
 header {
+  padding: 1em 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   background-color: #fff;
-  border-bottom:4px solid $main-orange;
-  display:none !important;
-  box-shadow:2px 2px 2px #ddd;
-
+  border-bottom: 4px solid $main-orange;
+  display: none !important;
+  box-shadow: 2px 2px 2px $gray;
   @include breakpoint(sm) {
-    display:block !important;
+    display: block !important;
   }
-
-    a#logo-container{
-      padding:0;
-      &:hover{
-        box-shadow: none;
-        border-radius: 0;
-      }
-      img{
-        width:85%;
-        display:block;
-        margin:auto;
-      }
-    }
   nav {
     ul {
-      text-align:right !important;
-       li{
-         display:inline-block;
-         a{
-            @extend %not-link; 
-            display:block;
-            padding:1em;
-            color:inherit;
-            font-weight:800;
-            &:hover{
-              box-shadow: 0px 0px 8px #ddd;
-              border-radius: 1px;
-            }
-         }
-       }
+      margin: 0;
+      padding: 0;
+      text-align: center !important;
+      li {
+        display: inline-block; //  padding:0 2em;
+        @include breakpoint(md) {
+          // padding:0 1em;
+        }
+        a {
+          @extend %not-link;
+          display: block;
+          padding: 1em;
+          color: inherit;
+          font-weight: 800;
+          &:hover {
+            box-shadow: 0px 0px 8px $gray;
+            border-radius: 1px;
+          }
+        }
+        img {
+          width: 6em;
+          transition:all .4s ease 0s;
+        }
+      }
+    }
+  }
+
+  &.small-header {
+    img {
+      transition:all 1s ease 0s;
+      width: 3em;
     }
   }
 }

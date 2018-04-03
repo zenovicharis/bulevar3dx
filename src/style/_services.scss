@@ -11,32 +11,25 @@
       font-size:70%;
     }
   }
+
   .first-service{
-    background:url('../img/Usluge/1.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
+    @include service('../img/Usluge/1.jpg');
   }
 
   .second-service{
-    background:url('../img/Usluge/2.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
+    @include service('../img/Usluge/2.jpg');
   }
 
   .third-service{
-    background:url('../img/Usluge/3.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
+    @include service('../img/Usluge/3.jpg');
   }
 
   .fourth-service{
-    background:url('../img/4.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
+    @include service('../img/4.jpg');
   }
 
   .shadow-div {
-    box-shadow:0px 0px 5px #ddd;
+    box-shadow:0px 0px 5px $gray;
   
     .service {
       background-color:#fff;

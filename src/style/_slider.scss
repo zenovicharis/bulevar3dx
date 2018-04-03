@@ -1,25 +1,35 @@
 #desktop-slider{
   margin-top:8em;
   display:none;
+  
   @include breakpoint(sm){
     display:block;
   }
   .carousel-inner{
-    height: 525px;
+    // height: 525px;
+    max-height:480px;
     position:relative;
   }
   .captions{
     position:absolute;
-    width:400px;
+    width:20em;
     background-color:rgba(221,221,221, .6);
     right: 2em;
     top: 2em;
     text-align: center;
-    border-right: 2px solid orange;
-    img{
-      width:100%;
-      margin:auto;
+    border-right: 2px solid $main-orange;
+    h5{
+      color:$main-orange;
     }
+  }
+  .captions.top-bottom-right{
+    top: 13em;
+    right: 8em;
+  }
+  .captions.top-bottom-left{
+    top: 14em;
+    left: 8em;
+
   }
 }
 

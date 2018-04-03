@@ -12,12 +12,18 @@
 @import "footer";
 @import "modal-fixed";
 @import "slider";
+@import "social";
 
 // responsive sections
 @import "mobile-header";
 
 * {
   font-family: 'Roboto', sans-serif;
+}
+
+#wrapper{
+  width:100%;
+  overflow:hidden;
 }
 
 .map{
