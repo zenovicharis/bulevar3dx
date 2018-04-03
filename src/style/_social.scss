@@ -15,9 +15,17 @@
     padding-bottom: 0;
     width: 100%;
   }
+  a{
+    @extend %not-link;
+  }
   i{
     cursor:pointer;
     transition:all .4s ease 0s;
+    padding: 5% 12% !important;
+    transition:all 1s ease 0s;
+    // &:active{
+
+    // }
     &#fb {
       color:#fff;
       background-color: #365899;

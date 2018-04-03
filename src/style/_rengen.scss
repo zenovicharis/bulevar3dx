@@ -3,6 +3,13 @@ div.rengen{
     background-image:url('../img/ispravka.jpg');
     background-repeat: no-repeat;
     background-color:#e8e8e8;
+    // background-size: 100%;
+    // background-position-x: 3em;
+    @include breakpoint(xs){
+      background-size: 74%;
+      background-position-x: 3em;
+    }
+   
     .block-custom{
       float:right;
       width:100%;
