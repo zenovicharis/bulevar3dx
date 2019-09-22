@@ -24,10 +24,10 @@ $isSent = $mail->Send();
 $url = '';
 if(!$isSent) {
     $message = urlencode('Poruka nije poslata, probajte ponovo kasnije');
-    $url .= ('/?errormessage='.$message);
+    $url .= ('?errormessage='.$message);
 } else {
     $message = urlencode('Poruka uspesno poslata, javljamo vam se prvom prilikom');
-    $url .= ('/?message='.$message);
+    $url .= ('?message='.$message);
 }
 header("Location: /index.html".$url);
 
