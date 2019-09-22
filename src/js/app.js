@@ -4,7 +4,25 @@ import '../../node_modules/lightbox2/dist/css/lightbox.css';
 import '../../node_modules/lightbox2/dist/js/lightbox.js';
 import '../../node_modules/jquery-validation/dist/jquery.validate.js';
 
+$.urlParam = function (name) {
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                    .exec(window.location.search);
+
+  return (results !== null) ? decodeURIComponent(results[1]).split('+').join(' ') || 0 : false;
+}
+
 $(document).ready(function () {
+  $("#myModal").click(function() {
+    $(this).css('display', 'none');
+  });
+  let succesfulMessage = $.urlParam('message');
+  let errorMessage = $.urlParam('errormessage');
+  if (succesfulMessage || errorMessage) {
+    let message = succesfulMessage ? succesfulMessage : errorMessage;
+    $("#customHeaderModal").css('background-color', succesfulMessage ? '' : 'red' );
+    $("#modalText").text(message);
+    $("#myModal").css('display', 'flex');
+  }
 
   $("body").css("display", "block");
 
@@ -36,19 +54,15 @@ $(document).ready(function () {
         $("header").removeClass("small-header");
     }
 })
-  // $("#right").attr('style', styleRightArrow);
-  // $("#left").attr('style', styleLeftArrow);
 
   var currentPhoto = 0;
   $("#left").on("click", function (e) {
     e.preventDefault()
-    console.log("left");
     changePhoto("right")
   })
 
   $("#right").on("click", function (e) {
     e.preventDefault()
-    console.log("right");
     changePhoto("right");
   })
 
@@ -69,7 +83,6 @@ $(document).ready(function () {
   }
 
   function openFirstLink() {
-    console.log("Clicked");
     var link = $(this).find('a');
     link[0].click();
   }
@@ -78,16 +91,18 @@ $(document).ready(function () {
   $("#contactForm").validate({
     rules: {
       // simple rule, converted to {required:true}
-      "cname": "required",
+      "name": "required",
       // compound rule
-      "cemail": {
+      "email": {
         required: true,
         email: true
+      },
+      "content": {
+        required: true
       }
     },
     submitHandler: function (form) {
-      console.log("hello")
-      // $(form).ajaxSubmit();
+      $(form).ajaxSubmit();
     }
   });
 

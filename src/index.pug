@@ -348,17 +348,17 @@ section
     .row
       h2.col-12.text-center Kontaktirajte Nas
     .row.mx-0.px-1
-      form#contactForm
+      form#contactForm(action="/mail.php" method="POST")
         .col-12.col-sm-8.row.mx-auto.form-custom
           .col-12.px-2
             p
               | Stupite u kontakt sa nama putem e-maila. Budite informisani o svim nasim uslugama
           .col-6.pl-2.pr-1
-            input.form-control.custom-input(type='text', placeholder='Ime i Prezime', name='cname', required='', data-msg='Unesite vase ime i prezime')
+            input.form-control.custom-input(type='text', placeholder='Ime i Prezime', name='name', required='', data-msg='Unesite vase ime i prezime')
           .col-6.pr-2.pl-1
-            input.form-control.custom-input(type='email', placeholder='Vas E-mail adresa', name='cemail', required='', data-msg='Unesite tacnu e-mail adresu')
+            input.form-control.custom-input(type='email', placeholder='Vas E-mail adresa', name='email', required='', data-msg='Unesite tacnu e-mail adresu')
           .col-12.px-2.py-2
-            textarea.w-100(name='', id='', rows='6')
+            textarea.w-100(name='content', id='', rows='6')
           .col.px-2
             button.btn.btn-default.btn-block(type='submit') Posalji
 // Contact Form END
@@ -413,3 +413,13 @@ footer
         i.fas.fa-chevron-right
       a#left.controls-custom(href='')
         i.fas.fa-chevron-right
+#myModal.modal.fade
+.modal-dialog
+  .modal-content
+    // Modal Header
+    #customHeaderModal.modal-header
+      h4.modal-title.m-auto Obavestenje
+      //- button.close(type="button" data-dismiss="modal") ×
+    // Modal body
+    #modalText.modal-body.text-center
+      |

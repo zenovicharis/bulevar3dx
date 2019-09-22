@@ -67,15 +67,36 @@ module.exports = {
       },
       {
         test: /\.(woff2?|svg)$/,
-        loader: 'url-loader?limit=10000'
+        use: [{
+          loader: 'url-loader?limit=10000',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/svg/',
+            publicPath: 'img/svg/'
+          }
+        }]        
       },
       {
         test: /\.(ttf|eot)$/,
-        loader: 'file-loader'
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+            publicPath: 'fonts/'
+          }
+        }]
       },
       {
         test: /\.gif$/,
-        loader: 'file-loader'
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/gifs/',
+            publicPath: 'img/gifs/'
+          }
+        }]
       },
       {
         test: /\.ico$/,

@@ -542,19 +542,19 @@
           <h2 class="col-12 text-center">Kontaktirajte Nas</h2>
         </div>
         <div class="row mx-0 px-1 mb-2">
-          <form id="contactForm">
+          <form id="contactForm" action="/mail.php" method="POST">
             <div class="col-8 col-sm-6 row mx-auto form-custom ">
               <div class="col-12 px-2">
                 <p>Stupite u kontakt sa nama putem e-maila. Budite informisani o svim nasim uslugama</p>
               </div>
               <div class="col-6 pl-2 pr-1">
-                <input type="text" placeholder="Ime i Prezime" name="cname" class="form-control custom-input" required data-msg="Unesite vase ime i prezime">
+                <input type="text" placeholder="Ime i Prezime" name="name" class="form-control custom-input" required data-msg="Unesite vase ime i prezime">
               </div>
               <div class="col-6 pr-2 pl-1">
-                <input type="email" placeholder="Vas E-mail adresa" name="cemail" class="form-control custom-input" required data-msg="Unesite tacnu e-mail adresu">
+                <input type="email" placeholder="Vas E-mail adresa" name="email" class="form-control custom-input" required data-msg="Unesite tacnu e-mail adresu">
               </div>
               <div class="col-12 px-2 py-2">
-                <textarea name="" id="" class="w-100" name="cmessage" rows="6"></textarea>
+                <textarea name="content" id="" class="w-100" name="cmessage" rows="6"></textarea>
               </div>
               <div class="col px-2">
                 <button class="btn btn-default btn-block" type="submit">Posalji</button>
@@ -650,6 +650,19 @@
           </a>
         </div>
 
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="customHeaderModal" class="modal-header">
+          <h4 class="modal-title m-auto">
+            Obavestenje
+          </h4>
+        </div>
+        <div id="modalText" class="modal-body text-center">
+        </div>
       </div>
     </div>
   </div>
