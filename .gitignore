@@ -1,7 +1,7 @@
-.vscode
-node_modules
-dist
-src/img/360/*
-src/img/slabije/*
-src/img/Snimci/*
-vendor
+node_modules/
+development/
+.cache/
+docs/
+dist/
+.parcel-cache/
+vendor/
