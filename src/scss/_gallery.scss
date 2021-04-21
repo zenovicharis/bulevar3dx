@@ -1,0 +1,38 @@
+.gallery{
+  .bordered{
+    box-sizing:border-box;
+    // border-left:2px solid #fff;
+  }
+  .container{
+    box-shadow:0px 2px 4px $gray;
+  }
+
+  .visual {
+    color:#fff;
+    text-align:center;
+    margin: 0 3%;
+    box-shadow: 0px 0px 7px rgba(0,0,0,.5);
+    text-shadow: 1px 0px 2px #000;
+    border-radius:3px;
+    cursor:pointer;
+    transition:all .9s ease 0s;
+    &:hover{
+      background-size: 70% !important;
+    }
+  }
+
+  #ordinacija{
+    @include gallery-sections('../assets/img/xray.png', 60%);
+    @include breakpoint(lg){
+      background-position-y:2em;
+    }
+  }
+
+  #xray {
+    @include gallery-sections('../assets/img/lisaann.jpg', 60%)
+  }
+  
+  #sphere{
+    @include gallery-sections('../assets/img/sphere.png', 60%)
+  }
+}
