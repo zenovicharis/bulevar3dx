@@ -11,7 +11,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Username = $config['address'];
 $mail->Password = $config['password'];
 $mail->Port = 465;
-$mail->setFrom('no-reply@upnp.rs', $_REQUEST['name']);
+$mail->setFrom('no-reply@bulevar3dx.rs', $_REQUEST['name']);
 $mail->addReplyTo($_REQUEST['email'], $_REQUEST['name']);
 $mail->CharSet = 'UTF-8';
 $mail->isHTML();

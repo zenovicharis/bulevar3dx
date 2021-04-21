@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Copy Credentials
+      run: |
+        echo '${{ secrets.ENV_CONFIG}}' > config/config.json
     - name: Build the Docker image
       run: docker build --tag zenovicharis/bulevar3dx:latest . --file Dockerfile
     - name: Publish Docker Image
