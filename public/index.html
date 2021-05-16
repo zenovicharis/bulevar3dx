@@ -17,6 +17,12 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script> -->
   <title>Bulevar 3DX</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("form").submit();
+    }
+  </script>
 </head>
 
 <body >
@@ -559,10 +565,14 @@
               <div class="col-12 px-2 py-2">
                 <textarea name="content" id="" class="w-100" name="cmessage" rows="6"></textarea>
               </div>
-              <div class="col px-2">
-                <button class="btn btn-default btn-block" type="submit">Posalji</button>
+              <div class="col-12 px-2">
+                <button class="btn btn-default btn-block">Posalji</button>
               </div>
-
+              <br/>
+              <div class="col-12 px-2">
+                <div class="g-recaptcha" data-sitekey="6LeXTNcaAAAAALIbgkBIDH_vBDJFhEN3gMbRihYK"></div>
+                <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+              </div>
             </div>
           </form>
         </div>

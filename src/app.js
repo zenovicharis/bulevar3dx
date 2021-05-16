@@ -90,6 +90,7 @@ $(function () {
 
 
   $("#contactForm").validate({
+    ignore: ".ignore",
     rules: {
       // simple rule, converted to {required:true}
       "name": "required",
@@ -100,6 +101,16 @@ $(function () {
       },
       "content": {
         required: true
+      },
+      "hiddenRecaptcha": {
+        required: function () {
+          debugger
+            if (grecaptcha.getResponse() == '') {
+                return true;
+            } else {
+                return false;
+            }
+        }
       }
     },
     submitHandler: function (form) {

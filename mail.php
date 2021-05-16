@@ -1,27 +1,35 @@
 <?php
 require '../vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
+use Symfony\Component\HttpClient\HttpClient;
 
 $config = json_decode(file_get_contents($_SERVER['HOME'].'/config.json'), true);
-$mail = new PHPMailer();
-$mail->isSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPSecure = 'ssl';
-$mail->Host = 'smtp.gmail.com';
-$mail->Username = $config['address'];
-$mail->Password = $config['password'];
-$mail->Port = 465;
-$mail->setFrom('no-reply@bulevar3dx.rs', $_REQUEST['name']);
-$mail->addReplyTo($_REQUEST['email'], $_REQUEST['name']);
-$mail->CharSet = 'UTF-8';
-$mail->isHTML();
-$mail->Subject = 'Online Forma';
-$content = generateContent($_REQUEST['name'], $_REQUEST['email'], $_REQUEST['content']);
-$mail->Body    = $content;
-$mail->AltBody = htmlentities($content);
-$mail->addAddress($config['reciever'], "Jusuf");
-$isSent = $mail->Send();
-$url = '';
+
+$isValidCaptcha = validateCaptcha($_REQUEST['g-recaptcha-response'], $config['reCaptchaSecretKey']);
+
+if($isValidCaptcha->success) {
+    $mail = new PHPMailer();
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Username = $config['address'];
+    $mail->Password = $config['password'];
+    $mail->Port = 465;
+    $mail->setFrom('no-reply@bulevar3dx.rs', $_REQUEST['name']);
+    $mail->addReplyTo($_REQUEST['email'], $_REQUEST['name']);
+    $mail->CharSet = 'UTF-8';
+    $mail->isHTML();
+    $mail->Subject = 'Online Forma';
+    $content = generateContent($_REQUEST['name'], $_REQUEST['email'], $_REQUEST['content']);
+    $mail->Body    = $content;
+    $mail->AltBody = htmlentities($content);
+    $mail->addAddress($config['reciever'], "Jusuf");
+    $isSent = $mail->Send();
+    $url = '';
+
+}
 if(!$isSent) {
     $message = urlencode('Poruka nije poslata, probajte ponovo kasnije');
     $url .= ('?errormessage='.$message);
@@ -43,4 +51,16 @@ function generateContent ($name, $email, $content) {
             <hr>
             <small>Mail poslat sa forme sajta https://bulevar3dx.com</small>
         </div>";
+}
+
+function validateCaptcha($response, $secretKey) {
+    $httpClient = HttpClient::create();
+    $response = $httpClient->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+        'body' => [
+            'secret' => $secretKey,
+            'response' => $response,
+        ]
+    ]);
+
+    return json_decode($response->getContent());
 }
